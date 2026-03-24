@@ -30,25 +30,9 @@ test('create & delete article using API - Test 3', async ({ page, request }) => 
     console.log("UI Assertion completed!")
 
     //Get access token - Required step to delete newly created article
-    const response = await request.post('https://conduit-api.bondaracademy.com/api/users/login',
-
-        {
-            //this is the payload for user id and password
-            data: { user }
-        }
-    )
-    const responseBody = await response.json()
-    const accessToken = responseBody.user.token
-    console.log(`AccessToken caputred`)
 
     //Delete Article Step using API
-    const deleteArticleResponse = await request.delete(`https://conduit-api.bondaracademy.com/api/articles/${slugId}`,
-        {
-            headers:
-            {
-                Authorization: `Token ${accessToken}`
-            }
-        })
+    const deleteArticleResponse = await request.delete(`https://conduit-api.bondaracademy.com/api/articles/${slugId}`)
     console.log(`Successfully deleted article using API`)
 
     //Assertion of deleteArticleResponse 

@@ -21,25 +21,12 @@ test.beforeEach(async ({ page }) => {
 
 test('delete article - Test 2', async ({ page, request }) => {
     //1.This is login endpoint url
-    const response = await request.post('https://conduit-api.bondaracademy.com/api/users/login',
-
-        {
-            //this is the payload for user id and password
-            data: {user}
-        }
-    )
-    const responseBody = await response.json()
-    const accessToken = responseBody.user.token
-
     //2.This is endpoint - after publishing article successfully.
     const articleResponse = await request.post('https://conduit-api.bondaracademy.com/api/articles/', {
 
         //this is the payload for article creation
-        data: {article},
-        headers:
-        {
-            Authorization: `Token ${accessToken}`
-        }
+        data: {article}
+        
     })
 
     //Verify Response - this will validate whether payload was deleted successfully.
