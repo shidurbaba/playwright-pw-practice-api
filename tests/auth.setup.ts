@@ -1,8 +1,9 @@
 import { test as setup } from '@playwright/test';
+import { user} from '../test-data/usertestdata.json';
 
 const authFile = '.auth/user.json'
 
-setup('authentication', async ({ page }) => {
+setup('authentication', async ({ page, request }) => {
     await page.goto('https://conduit.bondaracademy.com/');
     console.log("Navigated to page and mocked data.")
     await page.getByText('Sign in').click()
@@ -11,6 +12,5 @@ setup('authentication', async ({ page }) => {
     await page.getByRole('button').click();
     await page.waitForResponse('https://conduit-api.bondaracademy.com/api/tags')
     
-    await page.context().storageState({path: authFile})
-    
+    await page.context().storageState({path: authFile})   
 })

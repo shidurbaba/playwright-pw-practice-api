@@ -1,0 +1,23 @@
+{
+  "user": {
+    "email": "mperistest@test.com",
+    "password": "Welcome289"
+  },
+  "article": {
+    "slug": "This-is-a-test-title-49366",
+    "title": "This is a test title",
+    "description": "This is test description",
+    "body": "This is a body",
+    "tagList": [],
+    "createdAt": "2026-03-22T13:35:46.777Z",
+    "updatedAt": "2026-03-22T13:35:46.777Z",
+    "favorited": false,
+    "favoritesCount": 0,
+    "author": {
+      "username": "mperis",
+      "bio": null,
+      "image": "https://conduit-api.bondaracademy.com/images/smiley-cyrus.jpeg",
+      "following": false
+    }
+  }
+}
