@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import tags from '../test-data/tags.json';
-import { user, article } from '../test-data/users.json';
+import { user, article } from '../test-data/usertestdata.json';
 
 test.beforeEach(async ({ page }) => {
     //Playwright Mock - Configure it inside the playwright framework before browser to make a call to the certain API
